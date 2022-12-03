@@ -1,0 +1,58 @@
+
+import java.util.Scanner;
+   public class arithmetic
+{
+	public static void main(String args[])
+	{
+	float addition(int x, int y)
+	{
+		int z=x+y;
+		return z;
+	}
+	float subtraction(int x,int y)
+	{
+		int z=x-y;
+		return z;
+	}
+	float multiplication(int x, int y)
+	{
+		float z=x*y;
+		return z;
+	}
+	float division(int x, int y)
+	{
+		float z=x/y;
+		return z;
+	}
+float module(int x, int y)
+{
+		float z=x%y;
+		return z;
+	}
+}
+
+class runarithmetic
+{
+	public static void main(String args[])
+	{
+int w,b;
+		float c;
+		Scanner s=new Scanner(System.in);
+		arithmetic a=new arithmetic();
+		System.out.println("Enter two numbers");
+		w=Integer.parseInt(s.next());
+		b=Integer.parseInt(s.next());
+		c=a.addition(w,b);
+		
+		System.out.println("Addition =" +c);
+		c=a.subtraction(w,b);
+		System.out.println("Subtraction =" +c);
+		c=a.module(w,b);
+		System.out.println("modulo =" +c);
+		c=a.multiplication(w,b);
+		System.out.println("multiplication =" +c);
+		c=a.division(w,b);
+		System.out.println("division =" +c);
+	}
+}
+}
