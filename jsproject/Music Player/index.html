@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player </title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/004a5ce880.js" crossorigin="anonymous"></script>
+</head>
+<body>
+        <div class="container">
+          <div class="music-player">
+         
+          <nav>
+            <div class="circle">
+                <i class="fa-solid fa-angle-left"></i>
+            </div>
+            <div class="circle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+          </nav>
+                         <img src="download.jfif" class="song-img">
+                         <h1>Chaleya</h1>
+                         <p>Arijit Singh &  Shilpa Rao Ft. Shahrukh Khan & Nyantara</p>
+
+                         <audio controls>
+                            <source src="chlaiya.mpeg" type="audio/mpeg">
+                         </audio>
+                         <input type="range"  value="0"  id="progress">
+
+
+           <div class="controls" id="song">
+
+            <div><i class="fa-solid fa-backward"></i></div>
+            <div onclick="playPause()" ><i class="fa-solid fa-play" id="ctrIcon" ></i></div>
+            <div> <i class="fa-solid fa-forward"></i></div>
+           </div>
+
+          </div>
+        </div>
+
+    <script>
+      let progress = document.getElementById("progress");
+      let song = document.getElementById("song");
+      let ctrIcon = document.getElementById("ctrIcon");
+
+       song.onloadedmetadata = function(){
+        progress.max = song.duration;
+        progress.value = song.currentTime;
+       }
+
+       function playPause(){
+        if(ctrIcon.classList.contains("fa-pause")){
+          song.pause();
+          ctrIcon.classList.remove("fa-pause");
+          ctrIcon.classList.add("fa-play");
+        }else{
+           song.play();
+          ctrIcon.classList.add("fa-pause");
+          ctrIcon.classList.remove("fa-play");
+        }
+       }
+
+    </script>
+    
+</body>
+</html>
